@@ -81,14 +81,6 @@ public class EmployeeServiceImpl implements EmployeeService {
         // 设置默认密码123456
         employee.setPassword(DigestUtils.md5DigestAsHex(PasswordConstant.DEFAULT_PASSWORD.getBytes()));
 
-        // 设置时间（创建/修改时间）
-        employee.setCreateTime(LocalDateTime.now());
-        employee.setUpdateTime(LocalDateTime.now());
-
-        // 设置修改人id
-        employee.setUpdateUser(BaseContext.getCurrentId());
-        employee.setCreateUser(BaseContext.getCurrentId());
-
         employeeMapper.insert(employee);
     }
 
@@ -143,10 +135,6 @@ public class EmployeeServiceImpl implements EmployeeService {
      * @param employee
      */
     public void update(Employee employee) {
-
-        employee.setUpdateTime(LocalDateTime.now());
-        employee.setUpdateUser(BaseContext.getCurrentId());
-
         employeeMapper.update(employee);
     }
 }
