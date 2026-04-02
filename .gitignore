@@ -4,7 +4,5 @@
 *.class
 *Test.java
 **/test/
-*.local.yml
-*.local.properties
 # 本地配置文件（包含敏感信息）
 sky-server/src/main/resources/application-local.yml
